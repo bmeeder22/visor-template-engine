@@ -11,7 +11,7 @@ let config = {
       type: "twocol",
       contentType: "html",
       content: {
-        left: "THIS IS THE LEFT CONTENT AND I HATE IT",
+        left: page3,
         right: "THIS IS THE RIGHT CONTENT AND I HATE IT"
       }
     },
