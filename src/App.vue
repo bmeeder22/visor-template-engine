@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <TopMenu></TopMenu>
     <img alt="Vue logo" src="./assets/logo.png" width="25%" />
     <HelloWorld msg="Hello Vue in Ben!" />
   </div>
@@ -7,11 +8,13 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld";
+import TopMenu from "./components/TopMenu";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+    TopMenu,
   },
 };
 </script>
@@ -22,7 +25,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(18, 20, 29);
 }
 </style>
