@@ -25,6 +25,7 @@ export default {
   methods: {
     getElements() {
       let elements = [];
+      // TODO default handling in case this is undefined
       this.pageConfig.forEach((elementConfig) => {
         var elementBuilder = new ElementBuilder(elementConfig);
         elements.push(elementBuilder.getComponent());
@@ -55,8 +56,5 @@ export default {
 
 <style scoped>
 #root {
-  width: 100%;
-  height: 100%;
-  background-color: red;
 }
 </style>

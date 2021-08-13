@@ -1,15 +1,26 @@
 import Vue from "vue";
-import TestElement from "./components/elements/TestElement";
+import OneColumn from "./components/elements/OneColumn";
+import TwoColumns from "./components/elements/TwoColumns";
+
+let types = {
+  onecol: OneColumn,
+  twocol: TwoColumns
+};
 
 class ElementBuilder {
   constructor(config) {
     this.config = config;
+    this.content = config.content;
+    this.contentType = config.contentType;
+    this.type = config.type;
   }
 
+  generateContent() {}
+
   getComponent() {
-    let ComponentClass = Vue.extend(TestElement);
+    let ComponentClass = Vue.extend(types[this.type]);
     let instance = new ComponentClass({
-      propsData: { message: this.config }
+      propsData: { content: this.content }
     });
     return instance;
   }
