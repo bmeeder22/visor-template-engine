@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <TopMenu></TopMenu>
-    <img alt="Vue logo" src="./assets/logo.png" width="25%" />
-    <HelloWorld msg="Hello Vue in Ben!" />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
 import TopMenu from "./components/TopMenu";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
     TopMenu,
+  },
+  mounted() {
+    console.log(this.$router.url);
   },
 };
 </script>

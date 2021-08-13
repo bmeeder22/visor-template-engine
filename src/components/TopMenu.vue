@@ -28,6 +28,8 @@ export default {
   padding-top: 10px;
   padding-left: 10px;
   width: 30%;
+  max-width: 200px;
+  max-height: 50px;
   float: left;
 }
 
