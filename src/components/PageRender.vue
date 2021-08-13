@@ -1,23 +1,42 @@
 <template>
-  <div>
-    <div>{{ pageConfig }}</div>
-  </div>
+  <div id="root" ref="root"></div>
 </template>
 
 <script>
-import test from "../pages/test.json";
+import config from "../pages/pagesConfig.js";
+import ElementBuilder from "../ElementBuilder";
 
 export default {
   name: "PageRender",
-  mounted() {
-    console.log(this.pathName);
-  },
   data() {
-    return {};
+    return {
+      elements: null,
+    };
+  },
+  mounted() {
+    this.elements = this.getElements();
+    this.renderElements(this.elements);
+  },
+  updated() {
+    this.$refs.root.removeChild(this.elements.$el);
+    this.elements = this.getElements();
+    this.renderElements(this.elements);
   },
   methods: {
-    getPageConfig() {
-      return;
+    getElements() {
+      let elements = [];
+      this.pageConfig.forEach((elementConfig) => {
+        var elementBuilder = new ElementBuilder(elementConfig);
+        elements.push(elementBuilder.getComponent());
+      });
+
+      return elements;
+    },
+    renderElements(instances) {
+      instances.forEach((instance) => {
+        instance.$mount();
+        this.$refs.root.appendChild(instance.$el);
+      });
     },
   },
   computed: {
@@ -28,14 +47,14 @@ export default {
       return this.pathName.replace("/page/", "");
     },
     pageConfig() {
-      return test[this.pageName];
+      return config[this.pageName];
     },
   },
 };
 </script>
 
 <style scoped>
-div {
+#root {
   width: 100%;
   height: 100%;
   background-color: red;
