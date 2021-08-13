@@ -1,18 +1,19 @@
 import page3 from "./page3.html";
+import multiJiraIssues from "./multiJiraIssues.md";
 
 let config = {
   landing1: [
     {
       type: "onecol",
-      contentType: "html",
-      content: "This is all the content"
+      contentType: "md",
+      content: "# This is all the content"
     },
     {
       type: "twocol",
-      contentType: "html",
+      contentType: "md",
       content: {
         left: page3,
-        right: "THIS IS THE RIGHT CONTENT AND I HATE IT"
+        right: multiJiraIssues
       }
     },
     {
