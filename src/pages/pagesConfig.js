@@ -1,24 +1,8 @@
 import page3 from "./page3.html";
-import multiJiraIssues from "./multiJiraIssues.md";
+import jiraSyncLanding from "./jiraSyncLanding.json";
 
 let config = {
-  landing1: [
-    {
-      contentType: "md",
-      content: "# This is all the content"
-    },
-    {
-      contentType: "md",
-      content: {
-        left: page3,
-        right: multiJiraIssues
-      }
-    },
-    {
-      contentType: "html",
-      content: "This is all the content"
-    }
-  ],
+  landing1: jiraSyncLanding,
   landing2: ["test1"],
   landing3: ["test2"],
   test3: [page3, page3],

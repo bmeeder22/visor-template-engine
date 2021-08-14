@@ -20,8 +20,11 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
+  width: calc(100% - 4%);
   background-color: rgb(18, 20, 29);
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-bottom: 100px;
 }
 
 .logo-container {
@@ -37,13 +40,11 @@ export default {
   float: right;
 }
 
-button {
-  margin-top: 10px;
-  margin-right: 10px;
-  background-color: rgb(69, 206, 147);
-  padding: 4px;
-  border: none;
-  color: rgb(18, 20, 29);
-  border-radius: 4px;
+@media screen and (min-width: 1400px) {
+  #top_menu {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: calc(100% - 20%);
+  }
 }
 </style>

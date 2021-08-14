@@ -54,7 +54,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #root {
+  min-height: 100vh;
+  margin-top: 100px;
+}
+
+.container {
+  padding: 10px;
 }
 </style>

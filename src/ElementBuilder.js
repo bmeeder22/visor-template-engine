@@ -32,7 +32,10 @@ class ElementBuilder {
     else ComponentClass = Vue.extend(OneColumn);
 
     return new ComponentClass({
-      propsData: { content: this.content }
+      propsData: {
+        content: this.content,
+        align: "left"
+      }
     });
   }
 }

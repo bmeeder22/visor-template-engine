@@ -1,5 +1,5 @@
 <template>
-  <div v-html="content"></div>
+  <div class="container" v-html="content"></div>
 </template>
 
 <script>
@@ -12,8 +12,7 @@ export default {
 
 <style scoped>
 div {
-  border: 5px solid black;
+  /* border: 5px solid black; */
   margin-bottom: 20px;
-  min-height: 80vh;
 }
 </style>
