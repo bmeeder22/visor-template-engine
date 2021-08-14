@@ -13,6 +13,8 @@ export default {
 <style scoped>
 div {
   /* border: 5px solid black; */
-  margin-bottom: 20px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 </style>
