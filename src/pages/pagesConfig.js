@@ -4,12 +4,10 @@ import multiJiraIssues from "./multiJiraIssues.md";
 let config = {
   landing1: [
     {
-      type: "onecol",
       contentType: "md",
       content: "# This is all the content"
     },
     {
-      type: "twocol",
       contentType: "md",
       content: {
         left: page3,
@@ -17,7 +15,6 @@ let config = {
       }
     },
     {
-      type: "onecol",
       contentType: "html",
       content: "This is all the content"
     }

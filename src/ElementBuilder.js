@@ -3,11 +3,6 @@ import OneColumn from "./components/elements/OneColumn";
 import TwoColumns from "./components/elements/TwoColumns";
 import showdown from "showdown";
 
-let types = {
-  onecol: OneColumn,
-  twocol: TwoColumns
-};
-
 class ElementBuilder {
   constructor(config) {
     this.config = config;
@@ -15,7 +10,7 @@ class ElementBuilder {
     this.contentType = config.contentType;
     this.type = config.type;
 
-    if (this.contentType == "md") {
+    if (this.contentType === "md") {
       let converter = new showdown.Converter();
 
       if (this.isTwoCol()) {
@@ -32,11 +27,13 @@ class ElementBuilder {
   }
 
   getComponent() {
-    let ComponentClass = Vue.extend(types[this.type]);
-    let instance = new ComponentClass({
+    let ComponentClass;
+    if (this.isTwoCol()) ComponentClass = Vue.extend(TwoColumns);
+    else ComponentClass = Vue.extend(OneColumn);
+
+    return new ComponentClass({
       propsData: { content: this.content }
     });
-    return instance;
   }
 }
 
