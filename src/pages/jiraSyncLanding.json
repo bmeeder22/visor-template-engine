@@ -3,7 +3,7 @@
     "contentType": "md",
     "content": {
       "left": "<img src=\"https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60e721358b65831c52c7a9c9_landing-jira-gif.gif\" width=\"564\" height=\"473.31\" />",
-      "right": "# Edit Multiple JIRA Issues, Faster \n The power of Jira with the familiarity of spreadsheets. Visor brings your team together to plan, track, and collaborate on your Jira data — all in one place."
+      "right": "# Edit Multiple JIRA Issues, Faster \n The power of Jira with the familiarity of spreadsheets. Visor brings your team together to plan, track, and collaborate on your Jira data — all in one place. \n\n <button>Try for free</button>"
     }
   },
   {
@@ -25,28 +25,28 @@
     "contentType": "md",
     "content": {
       "left": "<img src=\"https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b9eec758270f06264b_backlog.png\"/>",
-      "right": "# Spreadsheet Simplicity to Manage Your Backlog \n Visor’s Table View offers the simplicity of a spreadsheet and robust Jira functionality. Pull your Jira data into a Visor Workbook and edit issues inline. Sort issues, update their priority in bulk, push everything back into Jira and finally clean up that backlog of yours."
+      "right": "# Spreadsheet Simplicity to Manage Your Backlog \n Visor’s Table View offers the simplicity of a spreadsheet and robust Jira functionality. Pull your Jira data into a Visor Workbook and edit issues inline. Sort issues, update their priority in bulk, push everything back into Jira and finally clean up that backlog of yours. \n\n <button>Try free</button>"
     }
   },
   {
     "contentType": "md",
     "content": {
       "right": "<img src=\"https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b8a4359d18c2766fe5_gantt.png\"/>",
-      "left": "# Gantt View to Visualize and Share \n Make it easier to communicate the plan in your head by creating a Gantt chart! Eliminate confusion by clearly highlighting when work should be completed, and aligning your team around upcoming deadlines."
+      "left": "# Gantt View to Visualize and Share \n Make it easier to communicate the plan in your head by creating a Gantt chart! Eliminate confusion by clearly highlighting when work should be completed, and aligning your team around upcoming deadlines. \n\n <button>Try gantt view</button>"
     }
   },
   {
     "contentType": "md",
     "content": {
       "left": "<img src=\"https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b965c5f3573418b54e_timeline.png\"/>",
-      "right": "# Product Roadmaps for You + Team \n Group issues into a timeline view by their assignee to help team members see how their work fits in. Or, group by OKR to help executives understand how your team works towards company goals. Share your Visor roadmap to achieve buy-in."
+      "right": "# Product Roadmaps for You + Team \n Group issues into a timeline view by their assignee to help team members see how their work fits in. Or, group by OKR to help executives understand how your team works towards company goals. Share your Visor roadmap to achieve buy-in. \n\n <button>Try readmaps free</button>"
     }
   },
   {
     "contentType": "md",
     "content": {
       "right": "<img src=\"https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b91531dac188a32fff_connect-jira.png\"/>",
-      "left": "# All of this available with just three simple steps \n 1) Connect Visor to your Jira. \n\n 2) Import the Jira issues you care about. \n\n 3) Organize, plan, edit, and share you work. "
+      "left": "# All of this available with just three simple steps \n 1) Connect Visor to your Jira. \n\n 2) Import the Jira issues you care about. \n\n 3) Organize, plan, edit, and share you work. \n\n <button>Get started now</button>"
     }
   }
 ]

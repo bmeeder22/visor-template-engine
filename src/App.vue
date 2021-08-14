@@ -52,11 +52,15 @@ button {
   margin-top: 10px;
   margin-right: 10px;
   background-color: rgb(69, 206, 147);
-  padding: 20px 30px 20px 30px;
+  padding: 15px 30px 15px 30px;
   border: none;
   color: rgb(18, 20, 29);
   border-radius: 4px;
   font-size: medium;
   font-weight: bold;
+}
+
+p {
+  color: grey;
 }
 </style>
