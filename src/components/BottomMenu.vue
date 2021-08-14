@@ -1,10 +1,10 @@
 <template>
-  <div id="top_menu">
+  <div id="bottom_menu">
     <div class="logo-container">
-      <img src="../assets/visor-logo.svg" />
+      <p>© Copyright 2021 RocketVisor Corporation. All rights reserved.</p>
     </div>
     <div id="try-for-free">
-      <button>Try For Free</button>
+      <button>BOTTOM!!!</button>
     </div>
   </div>
 </template>
@@ -16,22 +16,13 @@ export default {
 </script>
 
 <style scoped>
-#top_menu {
-  position: fixed;
-  left: 0;
-  top: 0;
+#bottom_menu {
   width: calc(100% - 4%);
   background-color: rgb(18, 20, 29);
-  margin-left: 2%;
-  margin-right: 2%;
   padding-bottom: 100px;
 }
 
 .logo-container {
-  padding-top: 10px;
-  padding-left: 10px;
-  width: 30%;
-  max-width: 200px;
   max-height: 50px;
   float: left;
 }

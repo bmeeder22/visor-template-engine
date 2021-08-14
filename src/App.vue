@@ -3,17 +3,20 @@
     <div id="test">
       <TopMenu></TopMenu>
       <router-view></router-view>
+      <BottomMenu></BottomMenu>
     </div>
   </div>
 </template>
 
 <script>
 import TopMenu from "./components/TopMenu";
+import BottomMenu from "./components/BottomMenu";
 
 export default {
   name: "App",
   components: {
     TopMenu,
+    BottomMenu,
   },
   mounted() {
     console.log(this.$router.url);
