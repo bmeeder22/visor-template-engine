@@ -34,7 +34,7 @@ class ElementBuilder {
     return new ComponentClass({
       propsData: {
         content: this.content,
-        align: "left"
+        align: this.config.align
       }
     });
   }

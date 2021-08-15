@@ -8,7 +8,7 @@ let config = {
     {
       contentType: "md",
       content:
-        "# Removing Technical Barriers: A Remarkable New Leadership Opportunity"
+        "# Removing Technical Barriers: </br>A Remarkable New Leadership Opportunity"
     },
     {
       contentType: "html",
@@ -17,7 +17,8 @@ let config = {
     },
     {
       contentType: "md",
-      content: blog1
+      content: blog1,
+      align: "left"
     }
   ]
 };
