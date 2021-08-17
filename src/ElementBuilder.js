@@ -7,19 +7,7 @@ class ElementBuilder {
   constructor(config) {
     this.config = config;
     this.content = config.content;
-    this.contentType = config.contentType;
-    this.type = config.type;
-
-    if (this.contentType === "md") {
-      let converter = new showdown.Converter();
-
-      if (this.isTwoCol()) {
-        this.content.left = converter.makeHtml(this.content.left);
-        this.content.right = converter.makeHtml(this.content.right);
-      } else {
-        this.content = converter.makeHtml(this.content);
-      }
-    }
+    this.align = config.align;
   }
 
   isTwoCol() {
@@ -34,7 +22,7 @@ class ElementBuilder {
     return new ComponentClass({
       propsData: {
         content: this.content,
-        align: this.config.align
+        align: this.align
       }
     });
   }

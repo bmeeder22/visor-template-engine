@@ -10,10 +10,12 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: "/page/:id", component: PageRender },
-  { path: "/", component: HelloWorld }
+  { path: "/", component: HelloWorld },
+  { path: "*", component: HelloWorld } // TODO 404 page
 ];
 
 const router = new VueRouter({
+  mode: "history",
   routes
 });
 

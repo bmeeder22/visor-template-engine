@@ -1,22 +1,25 @@
 <template>
-  <div v-bind:class="[container, alignClass]" v-html="content"></div>
+  <div v-bind:class="[container, alignClass]" v-html="htmlContent"></div>
 </template>
 
 <script>
+import InlineElementBuilder from "../../InlineElementBuilder";
+
 export default {
   data() {
     return {
-      container: "container"
-    }
+      container: "container",
+    };
   },
-  props: {
-    content: String,
-    align: String,
-  },
+  props: ["content", "align"],
   computed: {
     alignClass() {
       if (this.align === "left") return "align-left";
       else return "align-center";
+    },
+    htmlContent() {
+      let inlineElementBuilder = new InlineElementBuilder(this.content);
+      return inlineElementBuilder.getHtml();
     },
   },
 };

@@ -67,6 +67,10 @@ p {
   color: grey;
 }
 
+li {
+  color: grey;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;

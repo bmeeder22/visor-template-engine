@@ -1,19 +1,28 @@
 <template>
   <div class="row container">
     <div class="column left">
-      <div v-html="content.left"></div>
+      <div v-html="leftHtmlContent"></div>
     </div>
     <div class="column right">
-      <div v-html="content.right"></div>
+      <div v-html="rightHtmlContent"></div>
     </div>
   </div>
 </template>
 
 <script>
+import InlineElementBuilder from "../../InlineElementBuilder";
+
 export default {
-  props: {
-    content: Object,
-    align: String,
+  props: ["content", "align"],
+  computed: {
+    rightHtmlContent() {
+      let inlineElementBuilder = new InlineElementBuilder(this.content.right);
+      return inlineElementBuilder.getHtml();
+    },
+    leftHtmlContent() {
+      let inlineElementBuilder = new InlineElementBuilder(this.content.left);
+      return inlineElementBuilder.getHtml();
+    },
   },
 };
 </script>
@@ -23,11 +32,12 @@ export default {
   text-align: left;
   display: flex;
   margin-bottom: 20px;
+  /* max-width: 50vw; */
 }
 
 .column {
   flex: 50%;
-  /* border: 5px solid black; */
+  border: 5px solid black;
   display: flex;
   align-items: center;
 }

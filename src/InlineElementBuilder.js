@@ -10,18 +10,18 @@ class InlineElementBuilder {
         this.html += this.getHtmlForElement(element);
       });
     } else {
-      this.html = this.getHtmlForMarkdown(inlineElementArray);
+      this.html = this.getHtmlForElement(inlineElementArray);
     }
   }
 
   getHtmlForElement(element) {
     if (element.type === "btn") return this.getHtmlForButton(element);
     else if (element.type === "img") return this.getHtmlForImage(element);
-    else return this.getHtmlForMarkdown();
+    else return this.getHtmlForMarkdown(element);
   }
 
   getHtmlForButton(buttonElement) {
-    return `<a href="/#/${buttonElement.href}"><button>${buttonElement.text}</button></a>`;
+    return `<a href="/${buttonElement.href}"><button>${buttonElement.text}</button></a>`;
   }
 
   getHtmlForImage(imageElement) {

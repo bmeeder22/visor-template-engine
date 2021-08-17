@@ -1,8 +1,11 @@
 import jiraSyncLanding from "./jiraSyncLanding.json";
+import jiraSyncLandingYaml from "./jiraSyncLanding.yaml";
 import blog1 from "./blog1.md";
+import yaml from "js-yaml";
 
 let config = {
   landing1: jiraSyncLanding,
+  landing2: yaml.load(jiraSyncLandingYaml, "utf8"),
   blog1: [
     {
       contentType: "md",
