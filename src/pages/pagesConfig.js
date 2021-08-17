@@ -1,4 +1,3 @@
-import page3 from "./page3.html";
 import jiraSyncLanding from "./jiraSyncLanding.json";
 import blog1 from "./blog1.md";
 

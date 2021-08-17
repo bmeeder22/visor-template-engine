@@ -25,7 +25,7 @@ export default {
   methods: {
     getElements() {
       let elements = [];
-      // TODO default handling in case this is undefined
+      // TODO default handling in case this is undefined (page not found)
       this.pageConfig.forEach((elementConfig) => {
         var elementBuilder = new ElementBuilder(elementConfig);
         elements.push(elementBuilder.getComponent());

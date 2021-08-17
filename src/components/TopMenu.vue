@@ -4,7 +4,7 @@
       <img src="../assets/visor-logo.svg" />
     </div>
     <div id="try-for-free">
-      <button>Try For Free</button>
+      <router-link to="/page/blog1"><button>Try For Free</button></router-link>
     </div>
   </div>
 </template>

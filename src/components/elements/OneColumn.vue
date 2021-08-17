@@ -4,13 +4,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      container: "container"
+    }
+  },
   props: {
     content: String,
     align: String,
   },
   computed: {
     alignClass() {
-      console.log("alignClass" + this.align);
       if (this.align === "left") return "align-left";
       else return "align-center";
     },

@@ -32,6 +32,10 @@ export default {
   align-items: center;
 }
 
+.right {
+  padding-left: 30px;
+}
+
 @media screen and (max-width: 1000px) {
   .column {
     flex: 100%;
@@ -40,9 +44,9 @@ export default {
   .row {
     flex-flow: row wrap;
   }
-}
 
-.right {
-  padding-left: 30px;
+  .right {
+    padding-left: 0px;
+  }
 }
 </style>
