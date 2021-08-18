@@ -46,7 +46,7 @@ export default {
   padding-left: 30px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .column {
     flex: 100%;
   }

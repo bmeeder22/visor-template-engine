@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <div id="test">
-      <TopMenu></TopMenu>
-      <router-view></router-view>
-      <BottomMenu></BottomMenu>
+    <div id="side-margin">
+      <div id="max">
+        <TopMenu></TopMenu>
+        <router-view></router-view>
+        <BottomMenu></BottomMenu>
+      </div>
     </div>
   </div>
 </template>
@@ -39,15 +41,20 @@ export default {
   background-color: rgb(18, 20, 29);
 }
 
-#test {
+#max {
+  max-width: 1500px;
+}
+
+#side-margin {
   padding-left: 2%;
   padding-right: 2%;
 }
 
 @media screen and (min-width: 1400px) {
-  #test {
-    padding-left: 10%;
-    padding-right: 10%;
+  #side-margin {
+    padding-left: calc(50vw - 600px);
+    padding-right: calc(50vw - 600px);
+    max-width: 1200px;
   }
 }
 
