@@ -37,7 +37,7 @@ export default {
 
 .column {
   flex: 50%;
-  border: 5px solid black;
+  /* border: 5px solid black; */
   display: flex;
   align-items: center;
 }

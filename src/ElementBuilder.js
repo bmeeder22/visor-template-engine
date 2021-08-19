@@ -1,7 +1,6 @@
 import Vue from "vue";
 import OneColumn from "./components/elements/OneColumn";
 import TwoColumns from "./components/elements/TwoColumns";
-import showdown from "showdown";
 
 class ElementBuilder {
   constructor(config) {

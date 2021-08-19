@@ -25,13 +25,23 @@ class InlineElementBuilder {
   }
 
   getHtmlForImage(imageElement) {
+    if (imageElement.src.endsWith(".mp4"))
+      return this.getHtmlForMp4(imageElement);
+
     let width = "";
     if (imageElement.width) width = `width=${imageElement.width}`;
 
     let height = "";
     if (imageElement.height) height = `height=${imageElement.height}`;
 
-    return `<img src="${imageElement.src}" ${width} ${height}/>`;
+    let alt = "";
+    if (imageElement.alt) alt = `alt=${imageElement.alt}`;
+
+    return `<img src="${imageElement.src}" ${alt} ${width} ${height}/>`;
+  }
+
+  getHtmlForMp4(videoElement) {
+    return `<video autoplay loop muted playsinline src="${videoElement.src}"></video>`;
   }
 
   getHtmlForMarkdown(element) {

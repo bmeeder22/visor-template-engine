@@ -1,7 +1,7 @@
 <template>
   <div id="top_menu">
     <div class="logo-container">
-      <img src="../assets/visor-logo.svg" />
+      <img src="../assets/visor-logo.svg" alt="Visor Logo" />
     </div>
     <div id="try-for-free">
       <router-link to="/page/blog1"><button>Try For Free</button></router-link>

@@ -25,12 +25,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .align-left {
   text-align: left;
 }
 
 .align-center {
   text-align: center;
+}
+
+img {
+  margin-right: 20px;
 }
 </style>

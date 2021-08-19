@@ -68,6 +68,7 @@ button {
   border-radius: 4px;
   font-size: medium;
   font-weight: bold;
+  cursor: pointer;
 }
 
 p {
@@ -79,6 +80,11 @@ li {
 }
 
 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+video {
   max-width: 100%;
   max-height: 100%;
 }
