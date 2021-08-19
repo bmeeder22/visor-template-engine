@@ -8,6 +8,21 @@ import ElementBuilder from "../ElementBuilder";
 
 export default {
   name: "PageRender",
+  metaInfo() {
+    return {
+      title: this.title,
+      htmlAttrs: {
+        lang: "en-US",
+      },
+      meta: [
+        { charset: "utf-8" },
+        {
+          name: "description",
+          content: this.description,
+        },
+      ],
+    };
+  },
   data() {
     return {
       elements: null,
@@ -26,7 +41,9 @@ export default {
     getElements() {
       let elements = [];
       // TODO default handling in case this is undefined (page not found)
-      this.pageConfig.forEach((elementConfig) => {
+      if (!this.pageConfig) return []; // TODO 404
+
+      this.pageContents.forEach((elementConfig) => {
         var elementBuilder = new ElementBuilder(elementConfig);
         elements.push(elementBuilder.getComponent());
       });
@@ -49,6 +66,25 @@ export default {
     },
     pageConfig() {
       return config[this.pageName];
+    },
+    pageContents() {
+      var contents = this.pageConfig.filter((element) => {
+        return element.content;
+      });
+      return contents;
+    },
+    title() {
+      var title = this.pageConfig.filter((element) => {
+        return element.title;
+      })[0]?.title;
+      return title;
+    },
+    description() {
+      var description = this.pageConfig.filter((element) => {
+        return element.description;
+      })[0]?.description;
+
+      return description;
     },
   },
 };

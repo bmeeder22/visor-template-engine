@@ -13,6 +13,7 @@
     "js-yaml": "4.1.0",
     "showdown": "1.9.1",
     "vue": "^2.6.11",
+    "vue-meta": "2.4.0",
     "vue-router": "3.5.2"
   },
   "devDependencies": {
@@ -28,7 +29,10 @@
     "env": {
       "node": true
     },
-    "extends": ["plugin:vue/essential", "eslint:recommended"],
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
@@ -39,7 +43,11 @@
       "autoprefixer": {}
     }
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "keywords": [],
   "description": ""
 }
