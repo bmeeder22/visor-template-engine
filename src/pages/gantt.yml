@@ -1,0 +1,97 @@
+---
+
+- title: Gantt For Jira Data
+- description: Easily create beautiful gantt charts using your synced jira data
+
+- content:
+    left:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611c4865b995c8c2fe4b17f8_Jira%20Product%20Roadmap.png
+    right:
+    - "# Stunning Gantt Charts with Jira Data
+    
+    In seconds, create beautiful interactive gantt charts based on your Jira data. Visor's is a secure partner of Jira, and our two-way sync is reliable & easy. See why thousands trust Visor."
+    - type: btn
+      href: page/blog1
+      text: Get My Free Account
+
+- content: "# Trusted by teams at the world’s leading organizations"
+
+- content:
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656446579486b_gilead%201.png
+      alt: "Gilead Sciences logo"
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656806279486d_doordash-seeklogo.com%201.png
+      alt: "DoorDash logo"
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656313e79486e_Amazon_logo%201.png
+      alt: "Amazon logo"
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656ce4b79486f_samsung-1%201.png
+      alt: "Samsung logo"
+
+- content: 
+  - "# Gantts that Sync Back to Jira
+
+As you drag items on a Visor gantt, you can sync changes back to your Jira data. And vice versa!  So your views are always in sync."
+
+  - type: btn
+    text: Build My Gantt View Now
+    href: /
+
+- content:
+    left:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b8a4359d18c2766fe5_gantt-p-500.png
+    right:
+    - "# Gorgeous Gantt Views Make Your Work Pop
+    
+    Ditch the industrial & stuffy tools. Select the Gantt that makes your work look beautiful and elegant. Get your ideas across more easily with conditional formatting."
+    - type: btn
+      href: page/blog1
+      text: Build My Jira Gantt Chart Now
+
+- content:
+    right:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b9eec758270f06264b_backlog-p-500.png
+    left:
+    - "# Create Multiple Views Using Different Colors & Data
+    
+    Communicating plans is tough. Everyone wants their own perspective. Visor makes your life easier by offering multiple live views of the same gantt, each with different colors, filters, sorting, and hierarchies. Build them once and then let Visor keep them in sync with your Jira data."
+    - type: btn
+      href: page/blog1
+      text: Create My Gantt Chart Now
+
+- content:
+    left:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b965c5f3573418b54e_timeline-p-500.png
+    right:
+    - "# Interactive Drag & Drop 
+
+    Speed and agility are built-in.  Visor is powered by a spreadsheet. And you can drag & drop on the gantt to get your plan just right.  Great for exploring what-ifs. All the views in Visor stay in sync, so you only have one source of truth. Built for all teams, including waterfall and agile."
+    - type: btn
+      href: page/blog1
+      text: Build My Gantt Now
+
+- content:
+    right:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611eaa3173b5a7826deac81e_Syncing%20in%20progress-p-800.png
+    left:
+    - "# Visor Keeps Your Jira Data Fresh
+    
+    Visor has the most trusted and reliable syncing to Jira. It even replicates your Jira nesting, like epics, stories, and tasks. No more finger crossing and error emails! Build your gantt once, and let Visor keep your view in sync with changes in Jira. Or make changes in Visor, and then sync them back to Jira when you're ready."
+    - type: btn
+      href: page/blog1
+      text: Create My Gantt Chart Now
+
+- content: 
+  - "# Visor is a secure partner of Atlassian Jira
+  
+  Find Visor on the Atlassian Marketplace. Visor safeguards your data with industry-standard security technologies & protocols."
+
+  - type: btn 
+    text: Get My Free Account

@@ -1,0 +1,92 @@
+---
+
+- title: Visor is better than Roadmunk
+- description: Are you one of the thousands of frustrated Roadmunk users? Try something better. Visor is more flexible than Roadmunk, more affordable, and syncs better with other apps.
+
+- content:
+    left:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611c4865b995c8c2fe4b17f8_Jira%20Product%20Roadmap.png
+    right:
+    - "# Visor is Better than Roadmunk
+    
+    Are you one of the thousands of frustrated Roadmunk users? Try something better. Visor is more flexible than Roadmunk, more affordable, and syncs better with other apps."
+    - type: btn
+      href: page/blog1
+      text: See How Visor's Better Than Roadmunk
+
+- content: "# Trusted by teams at the world’s leading organizations"
+
+- content:
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656446579486b_gilead%201.png
+      alt: "Gilead Sciences logo"
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656806279486d_doordash-seeklogo.com%201.png
+      alt: "DoorDash logo"
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656313e79486e_Amazon_logo%201.png
+      alt: "Amazon logo"
+    - type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/60df66fdcda656ce4b79486f_samsung-1%201.png
+      alt: "Samsung logo"
+
+- content: 
+  - "# Visor is a secure partner of Atlassian Jira
+  
+  Find Visor on the Atlassian Marketplace. Visor safeguards your data with industry-standard security technologies & protocols."
+
+  - type: btn 
+    text: Get My Free Account
+
+- content:
+    left:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b9eec758270f06264b_backlog-p-500.png
+    right:
+    - "# Powered by a flexible spreadsheet
+    
+    You are in complete control of what fields to show from Jira and what custom information you need to add. All Jira data syncs both ways."
+    - type: btn
+      text: Get My Free Account Now
+
+- content:
+    right:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b8a4359d18c2766fe5_gantt-p-500.png
+    left:
+    - "# Elegant drag & drop roadmaps
+    
+    Make your work pop! Easily create roadmaps that look great and are fun to use. As you drag, Visor changes dates that sync to Jira. And changes made in Jira can sync and update your roadmap in realtime."
+    - type: btn
+      text: Design My Beautiful Roadmap
+
+- content:
+    left:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b965c5f3573418b54e_timeline-p-500.png
+    right:
+    - "# Create unique views for everyone
+    
+    Visor offers multiple ways to present your information, so you'll always have the right perspective.  "
+    - type: btn
+      text: Create My Roadmap Views
+
+- content:
+    right:
+      type: img
+      src: https://uploads-ssl.webflow.com/60df66fdcda656433d794695/611435b91531dac188a32fff_connect-jira-p-500.png
+    left:
+    - "# Superior integration reliability
+    
+    We built the world's most reliable & trustworthy Jira integration so you never have to cross your fingers when you import & sync."
+    - type: btn
+      text: Get My Free Account
+
+- content: 
+  - "# Visor is a secure partner of Atlassian Jira
+  
+  Find Visor on the Atlassian Marketplace. Visor safeguards your data with industry-standard security technologies & protocols."
+
+  - type: btn 
+    text: Get My Free Account

@@ -18,6 +18,8 @@ export default {
       else return "align-center";
     },
     htmlContent() {
+      console.log("htmlContent");
+      console.log(this.content);
       let inlineElementBuilder = new InlineElementBuilder(this.content);
       return inlineElementBuilder.getHtml();
     },
