@@ -1,0 +1,148 @@
+---
+
+- title: "How we turned Salesforce into a modern growth engine"
+- description: "Unlike sales-led growth companies who can rely on charming sales professionals to explain the value of a product and pivot their messaging on the fly, Visor is a product-led growth company."
+
+- content: "# How we turned Salesforce into a modern growth engine"
+
+- content: "
+![](https://blog.visor.us/content/images/2021/08/alex-knight-2EJCSULRwC8-unsplash.jpg)
+
+Unlike sales-led growth companies who can rely on charming sales professionals to explain the value of a product and pivot 
+their messaging on the fly, Visor is a product-led growth company.  The responsibility to adjust user targeting and then guide users to 
+value doesn't go away.  It just shifts from a person doing that work to the product doing that work.
+
+In effect, we need a digital team member to do what a human otherwise would. This is the principle behind our automated growth engine, 
+which we call Plato, after the ancient Athenian philosopher. We use Plato to understand who our users are, where they came from, and and 
+what they're doing in Visor.  With that information, it can intelligently update our targeting to find the best-fit users and guide them 
+to Visor's value.
+
+## Conceiving our digital colleague, Plato
+
+I spent four years analyzing companies [at arguably the world's most data-driven VC firm](https://www.insightpartners.com/).  
+And then I spent another two years daydreaming at Harvard Business School about how I could apply that knowledge to build the best 
+business in the world. 
+
+In principle, an ideal automated growth engine has the following basic components:
+
+![](https://blog.visor.us/content/images/size/w1000/2021/08/Plato-diagram.png)
+
+The first major challenge is centralizing all of the data into a place where queries and calculations can run.  That includes marketing data, such as user attribution and demographics.  It also includes in-product events, such as how many invites someone has sent.  
+
+The theoretical ideal home for all this information is one, central data lake.   We do have a giant Redshift cluster on AWS already, but the only way to get data out of it is to write queries and connect complicated visualization tools.  It's a good permanent home for our information, but it's less useful on a day-to-day basis without a lot of investment.  
+
+We wanted some of this information to be substantially more accessible and actionable. So we decided to augment this system with some type of flexible CRM solution that would have a UI and no-code capability.
+
+Salesforce and HubSpot were the top two contenders. Ultimately, we chose Salesforce as our hub because it's slightly more flexible and powerful.  Here are some of the Salesforce features that really pushed it over the edge:
+
+- A wide variety of highly-customizable field types, including datetimes, checkboxes, and multi-select dropdown fields
+
+- Formula field types
+
+- Process automation with Salesforce Process Builder
+
+- After over a decade of working with Salesforce, I've come to realize that much of the frustration for it comes from poorly-configured Salesforce accounts and improper change management.  If you know what you're doing and prevent everyone from overcomplicating it, Salesforce can be the ultimate multitool in a growth stack.
+  
+## Creating a Dashboard of User Engagement in Salesforce
+
+One of Plato's major components is it's tracking of user engagement.  By knowing how users engage with the product, we can get a better idea of their fit and their health.  That's how we'll tweak our marketing investments and automate interactions at the right time.
+
+Here are some of the fields we wanted to track:
+
+- Whether the user finished the onboarding wizard
+
+- Whether the user claimed to use Jira via the app selector
+
+- How many invites a user sent
+
+![](https://blog.visor.us/content/images/size/w1000/2021/08/Screen-Shot-2021-08-02-at-9.18.45-AM.png)
+
+
+Some of these fields would just be true/false flags.  Others would be counts (e.g. the number of invites sent).  
+
+The problem was: we didn't want a brittle system with lots of complexity.  The front-end shouldn't need to know about our Salesforce fields.  
+We wanted something that could flexibly accept data into Salesforce (in a common format) and allow us to run calculations on it later.
+
+The solution we came up with was to create a Key-Value store in Salesforce, with each key-value pair tied to a contact.  
+The idea would involve creating a new custom Salesforce object, which we called a Contact Value, with the following four main properties:
+
+- A link to the Contact record this belonged to
+
+- A key string to identify the event that happened
+
+- A value string to provide further details about the event
+
+- A timestamp
+
+
+![](https://blog.visor.us/content/images/2021/08/Screen-Shot-2021-08-02-at-9.35.29-AM.png)
+
+
+Using this system, each event from the product could come through to Salesforce in a generic way.  In fact, we wouldn't need the 
+front-end product to know anything about what fields existed in Salesforce.  The front-end product could just trigger events for 
+noteworthy actions, like finishing registration or inviting colleagues.  As long as it uses a consistent set of event names (i.e. keys), 
+we could use another process for counting these later.
+
+
+This seemed like a great idea until we ran into a wall.  Salesforce is notoriously weak when it comes to having formulas calculate 
+information based on related records.  There's no easy way to use a Formula field to calculate anything based on objects related to 
+the one in question.
+
+## How the Master-Detail Field & Roll-up Summary Field answered our questions
+
+The critical breakthrough came when we realized how we could use Salesforce's Master-Detail field with a Roll-up Summary 
+Field to keep a running tally of connected objects.
+
+A Roll-up Summary Field in Salesforce is a special field type that is often overlooked because it's useful in certain rare 
+circumstances like this.  And to have this field type available on an object, you have to have to some other object related to it 
+with a Master-Detail Relationship (not a regular Lookup field).
+
+
+![](https://blog.visor.us/content/images/size/w1000/2021/08/Screen-Shot-2021-08-02-at-9.40.07-AM.png)
+
+
+Roll-up Summary fields are only available when certain conditions are met.
+
+![](https://blog.visor.us/content/images/size/w1000/2021/08/Screen-Shot-2021-08-02-at-9.40.37-AM.png)
+
+
+The Master-Detail Relationship in Salesforce has the longest description of any field. But when you understand how to use them, things get interesting. By setting this as the relationship type between our Contact Value custom object and the default Salesforce Contact object, we unlocked the ability to have Roll-up Summary fields count and summarize them
+
+
+For those unfamiliar with the Roll-up Summary Field and Master-Detail Relationship, one popular use case for this dynamic duo of 
+functionality is when creating Order objects with related Line Item objects.  If each Line Item has aster-detail relationships with the 
+invoice object, then their values can be summed up using a Roll-up Summary field to calculate the total amount of the invoice.
+
+
+As [Salesforce writes](https://trailhead.salesforce.com/en/content/learn/modules/point_click_business_logic/roll_up_summary_fields):
+
+>> While formula fields calculate values using fields within a single record, roll-up summary fields calculate values from a set of related 
+records, such as those in a related list. You can create roll-up summary fields that automatically display a value on a master record based 
+on the values of records in a detail record. These detail records must be directly related to the master through a master-detail relationship.
+You can perform different types of calculations with roll-up summary fields. You can count the number of detail records related to a master 
+record, or calculate the sum, minimum value, or maximum value of a field in the detail records. In our scenario, we can use the Roll-up Summary 
+field's conditionals to only count certain items in the list.
+
+
+![](https://blog.visor.us/content/images/2021/08/Screen-Shot-2021-08-02-at-9.43.11-AM.png)
+
+
+By specifying the roll-up field to only count certain Contact Values matching a criteria, such as when the key matches some key, we have an highly-flexible way to analyze the user engagements. The screenshot above shows the field that tells us whether the user has completed the onboarding wizard by counting the number of events with the key completedQuickstartWizard.
+
+That's the final trick!  Every time an event happens in our product that fires into Salesforce, the roll-up fields recalculate.  
+We can then use this information to trigger growth automation tasks, ranging from enrolling the user in special HubSpot workflows as 
+well as triggering in-product modals to orient and guide the user."
+  align: left
+
+- content: 
+  - type: img
+    src: https://blog.visor.us/content/images/2020/07/Michael-Yaroshefsky-Square.jpg
+    width: 50px
+  - "**Author** [Michael Yaroshefsky](/)"
+
+
+
+
+
+
+
