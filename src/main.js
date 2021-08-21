@@ -12,8 +12,8 @@ Vue.use(VueMeta);
 
 const routes = [
   { path: "/page/:id", component: PageRender },
-  { path: "/", component: HelloWorld },
-  { path: "*", component: HelloWorld } // TODO 404 page
+  { path: "/", component: HelloWorld }, // TODO redirect to some default landing page
+  { path: "*", redirect: "/page/NotFound" }
 ];
 
 const router = new VueRouter({

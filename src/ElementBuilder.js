@@ -4,6 +4,8 @@ import TwoColumns from "./components/elements/TwoColumns";
 
 class ElementBuilder {
   constructor(config) {
+    console.log("ElementBuilder");
+    console.log(config);
     this.config = config;
     this.content = config.content;
     this.align = config.align;

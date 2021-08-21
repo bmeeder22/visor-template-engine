@@ -1,0 +1,13 @@
+---
+
+- title: Page Not Found
+- description: This page was not found
+
+
+- content:
+    - "# The page you are looking for was not found"
+
+- content: 
+  - type: btn
+    href: ""
+    text: Go Home

@@ -40,8 +40,10 @@ export default {
   methods: {
     getElements() {
       let elements = [];
-      // TODO default handling in case this is undefined (page not found)
-      if (!this.pageConfig) return []; // TODO 404
+
+      if (!this.pageConfig) {
+        return this.getNotFoundElements();
+      }
 
       this.pageContents.forEach((elementConfig) => {
         var elementBuilder = new ElementBuilder(elementConfig);
@@ -50,11 +52,27 @@ export default {
 
       return elements;
     },
+    getNotFoundElements() {
+      let elements = [];
+      let notFoundContents = this.getContentsFromPage(config.NotFound);
+      console.log(notFoundContents);
+      notFoundContents.forEach((content) => {
+        var elementBuilder = new ElementBuilder(content);
+        elements.push(elementBuilder.getComponent());
+      });
+      return elements;
+    },
     renderElements(instances) {
       instances.forEach((instance) => {
         instance.$mount();
         this.$refs.root.appendChild(instance.$el);
       });
+    },
+    getContentsFromPage(page) {
+      var contents = page.filter((element) => {
+        return element.content;
+      });
+      return contents;
     },
   },
   computed: {
@@ -68,19 +86,19 @@ export default {
       return config[this.pageName];
     },
     pageContents() {
-      var contents = this.pageConfig.filter((element) => {
+      var contents = this.pageConfig?.filter((element) => {
         return element.content;
       });
       return contents;
     },
     title() {
-      var title = this.pageConfig.filter((element) => {
+      var title = this.pageConfig?.filter((element) => {
         return element.title;
       })[0]?.title;
       return title;
     },
     description() {
-      var description = this.pageConfig.filter((element) => {
+      var description = this.pageConfig?.filter((element) => {
         return element.description;
       })[0]?.description;
 
